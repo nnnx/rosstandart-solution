@@ -31,7 +31,6 @@ def process():
                 if annot.type[0] == 8:
                     wordlist = page.get_text("words")
                     wordlist.sort(key=lambda w: (w[5], w[0]))
-                    data = {}
                     highlights = []
                     highlights.append(_parse_highlight(annot, wordlist))
                     colors = annot.colors

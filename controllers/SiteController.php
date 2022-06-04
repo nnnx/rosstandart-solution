@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\ResultCategoryItemSearch;
 use Yii;
 use yii\helpers\FileHelper;
 use yii\web\Controller;
@@ -23,6 +24,11 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new ResultCategoryItemSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 }

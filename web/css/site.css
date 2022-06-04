@@ -92,26 +92,44 @@ ul.select2-selection__rendered {
     white-space: nowrap;
 }
 
-.tr-cluster td {
+.td-cluster {
     background: #d4edda;
     color: #155724;
     border-color: #c3e6cb;
 }
 
-.tr-cluster-1 td {
+.td-cluster-1 {
     background: #f8d7da;
     color: #721c24;
     border-color: #f5c6cb;
 }
 
-.tr-cluster-2 td {
+.td-cluster-2 {
     background: #fff3cd;
     color: #856404;
     border-color: #ffeeba;
 }
 
-.tr-cluster-3 td {
+.td-cluster-3 {
     color: #004085;
     background-color: #cce5ff;
     border-color: #b8daff;
+}
+
+.loader {
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid #007BFF; /* Blue */
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
