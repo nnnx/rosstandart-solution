@@ -39,7 +39,6 @@ class ImportResultCategory extends BaseObject
             }
             return true;
         } catch (\Exception $e) {
-            print_r($e);
             return false;
         }
     }

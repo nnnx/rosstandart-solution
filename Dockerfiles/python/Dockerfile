@@ -8,6 +8,7 @@ RUN pip3 install tqdm
 RUN pip3 install catboost
 RUN pip3 install scikit-learn
 RUN pip3 install pymupdf
+RUN pip3 install var_dump
 
 WORKDIR /app/python
 ENTRYPOINT ["python"]

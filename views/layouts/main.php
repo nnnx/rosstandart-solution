@@ -38,6 +38,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav ml-auto'],
         'items' => [
             ['label' => 'Импорт pdf', 'url' => ['/import/pdf']],
+            ['label' => 'Импорт аннотаций', 'url' => ['/import/pdf-annots']],
         ],
     ]);
     NavBar::end();

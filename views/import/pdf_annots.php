@@ -1,14 +1,15 @@
 <?php
 
 /**
- * @var $model \app\models\ImportPdf
+ * @var $model \app\models\PdfAnnots
  */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use richardfan\widget\JSRegister;
 
-$this->title = 'Импорт pdf';
+$this->title = 'Импорт аннотаций из pdf';
+$countFiles = \app\models\ImportPdf::getCountFiles();
 ?>
 
 <h1><?= $this->title ?></h1>
@@ -20,12 +21,15 @@ $this->title = 'Импорт pdf';
 ]); ?>
 
 <p>
-    Файл должен быть в zip архиве и содержать папку "Разметка" с pdf файлами
+    Количество загруженных pdf файлов: <strong><?= $countFiles ?></strong>
 </p>
+<?php if (!$countFiles) { ?>
+    <div class="alert alert-danger">
+        Сначала нужно загрузить pdf документы
+    </div>
+<?php } ?>
 
-<?= $form->field($model, 'file')->fileInput()->label(false) ?>
-
-<?= Html::submitButton('Загрузить', ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton('Обработать', ['class' => 'btn btn-primary']) ?>
 
 <div class="loader d-none"></div>
 
