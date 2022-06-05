@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\ImportPdf;
 use app\models\ImportResultCategory;
+use app\models\ImportResultPdf;
 use app\models\PdfAnnots;
 use Yii;
 use yii\web\Controller;
@@ -56,5 +57,11 @@ class ImportController extends Controller
         return $this->render('pdf_annots', [
             'model' => $model,
         ]);
+    }
+
+    public function actionResultPdf()
+    {
+        $model = new ImportResultPdf();
+        $model->process();
     }
 }

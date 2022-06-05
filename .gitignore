@@ -19,8 +19,8 @@ tests/_output/*
 tests/_support/_generated
 
 /web/uploads/
-/python/results/*
 /data/Разметка/*
+/data/task2/*
 
 /.*
 !.gitignore

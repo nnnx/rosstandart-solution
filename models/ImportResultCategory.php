@@ -11,7 +11,7 @@ use yii\helpers\FileHelper;
  */
 class ImportResultCategory extends BaseObject
 {
-    const FILE_PATH = '@app/data/rubr0_rubr1_share_2021.csv';
+    const FILE_PATH = '@app/python/results/rubr0_rubr1_share_2021.csv';
 
     public function process()
     {

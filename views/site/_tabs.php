@@ -7,7 +7,11 @@ echo Nav::widget([
     'items' => [
         [
             'label' => 'По категориям',
-            'url' => ['site/index']
+            'url' => ['site/index'],
+        ],
+        [
+            'label' => 'По доле импорта (из pdf файлов)',
+            'url' => ['site/result-pdf'],
         ],
     ],
 ]);

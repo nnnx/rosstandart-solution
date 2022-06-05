@@ -54,9 +54,6 @@ $this->title = 'Результаты: по категориям';
     'tableOptions' => [
         'class' => 'table table-bordered'
     ],
-    'rowOptions' => function ($model) {
-        return ['class' => 'tr-cluster tr-cluster-' . $model->id];
-    },
 ]); ?>
 
 <?php JSRegister::begin() ?>

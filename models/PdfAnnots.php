@@ -17,12 +17,12 @@ class PdfAnnots extends BaseObject
 
     public function process()
     {
-//        $ch = curl_init();
-//        curl_setopt($ch, CURLOPT_URL, 'http://python:5000/scan-pdf');
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-//        curl_exec($ch);
-//        curl_close($ch);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://python:5000/scan-pdf');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+        curl_exec($ch);
+        curl_close($ch);
         Yii::$app->db->createCommand()->truncateTable(PdfItem::tableName())->execute();
         if (!file_exists(Yii::getAlias(self::RESULT_FILE))) {
             throw new \Exception('Отсутвует файл с результатами');
@@ -33,7 +33,6 @@ class PdfAnnots extends BaseObject
         }, PdfItem::getTypeColors());
         $columns = ['filename', 'color', 'type', 'value'];
         $dataForInsert = [];
-
         foreach ($data as $fileResult) {
             foreach ($fileResult['items'] as $item) {
                 if ($item['colors']) {
