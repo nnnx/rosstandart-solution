@@ -20,10 +20,10 @@ $this->title = 'Результаты: по категориям';
 
 <?= $this->render('_category_search', ['model' => $searchModel]) ?>
 
-<div class="charts">
+<div class="charts <?php if (Yii::$app->request->getQueryParams()) echo 'd-none'?>">
     <h4>Топ 20 категорий по доле импорта</h4>
+    <div id="chartTop20" style="height: 400px;"></div>
 </div>
-<div id="chartTop20" style="height: 400px;"></div>
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
